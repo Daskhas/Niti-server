@@ -13,7 +13,7 @@ RUN pip install -r requirements.txt
 # Bundle your app's source code inside the Docker image
 COPY . .
 
-# Expose port 8000 to the outside world
+# Expose port 3500 to the outside world
 EXPOSE 3500
 
 # Command to run your FastAPI application
