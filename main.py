@@ -10,6 +10,10 @@ load_dotenv()
 
 api = FastAPI()
 # api.include_router(app)
+@api.get("/")
+async def root():
+    return {"msg": "API is Online"}
+
 api.include_router(chat)
 
 
@@ -28,8 +32,8 @@ api.add_middleware(
     allow_headers=["*"],
 )
 
-# if __name__ == "__main__":
-#     # if os.environ.get('APP_ENV') == "development":
-#     uvicorn.run("main:api", host="0.0.0.0", port=3500,workers=4, reload=True)
-#     # else:
-#     #   pass
+if __name__ == "__main__":
+    # if os.environ.get('APP_ENV') == "development":
+    uvicorn.run("main:api", host="0.0.0.0", port=3500,workers=4, reload=True)
+    # else:
+    #   pass
